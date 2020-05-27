@@ -1,0 +1,30 @@
+#include <font.defs>
+#include <media.defs>
+{
+  Manufacturer "Brother"
+  ModelName "Brother QL-820NWB"
+  PCFileName "pybrotherql_ql_820nwb.ppd"
+  Version 1.0
+  Attribute "NickName" "PYBROTHERQL" ""
+
+  Filter application/vnd.cups-raster 100 rastertobrotherql
+  *Resolution - 8 0 0 0 300dpi
+  ColorModel Gray/Grayscale w chunky 0
+  ColorModel RGB/Color rgb chunky 0
+
+  Group "General/General"
+    Option "fooCutMedia/Cut Labels" PickOne AnySetup 10.0
+      Choice "Never/Never cut media" "<</CutMedia 0>>setpagedevice"
+      *Choice "Job/Cut after job" "<</CutMedia 2>>setpagedevice"
+      Choice "Page/Cut after every ticket" "<</CutMedia 4>>setpagedevice"
+
+  VariablePaperSize yes
+
+  CustomMedia "29mm endless" 73.44pt 200mm 0mm 0mm 0mm 0mm
+  	"<</PageSize[73.44 567]/ImagingBBox null>>setpagedevice"
+  	"<</PageSize[73.44 567]/ImagingBBox null>>setpagedevice"
+
+  HWMargins 0.00 0.00 0.00 0.00
+  MinSize 0.00 0.00
+  MaxSize 0.00 0.00
+}
